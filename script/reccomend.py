@@ -12,5 +12,8 @@ df_dati = pd.read_excel('/Users/guglielmo/Desktop/CODE/DataLAB/Aigab/dativ1.5.xl
 # Effettua le predizioni
 predizioni = modello.predict(df_dati)
 
-# Stampa le predizioni
-print("Le predizioni sul nuovo dataset sono:", predizioni)
+if predizioni == 1:  
+    # Stampa le predizioni
+    print("Prodotto consigliabile")
+else:
+    print("Prodotto non consigliabile")
