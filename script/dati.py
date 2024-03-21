@@ -49,7 +49,7 @@ def creadatiutenti(num_utenti, nomefile, features):
     return df.to_excel(f'{nomefile}.xlsx', index=False)
 
 def normalizza_dati_utenti(df, nomefile, features):
-    colonne_scaler = features[1:-2]
+    colonne_scaler = features[1:-5]
     scaler = MinMaxScaler()
     df[colonne_scaler] = scaler.fit_transform(df[colonne_scaler])
     
@@ -152,7 +152,7 @@ def normalizza_dati_prodotti(df, nomefile, features):
     print ('OK, dati prodotti normalizzati')
     return df.to_excel(f'{nomefile}.xlsx', index=False)
     
-df = pd.read_excel('elenco_prodotti_finanziari.xlsx')
-normalizza_dati_prodotti(df, 'prodottinorm', FEATURES_PRODOTTI)
+#df = pd.read_excel('elenco_prodotti_finanziari.xlsx')
+#normalizza_dati_prodotti(df, 'prodottinorm', FEATURES_PRODOTTI)
 
     
